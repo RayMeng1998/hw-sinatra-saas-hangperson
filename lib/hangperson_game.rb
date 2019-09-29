@@ -36,7 +36,7 @@ class HangpersonGame
     i = 0
     while i < @word.size()
       if @guesses.downcase.include? word[i].downcase
-        res += word[i]
+        res += @word[i]
       else
         res += '-'
       end
@@ -48,7 +48,7 @@ class HangpersonGame
   def check_win_or_lose()
     if word_with_guesses() == @word
       return :win
-    elsif wrong_guesses.size < 7
+    elsif @wrong_guesses.size < 7
       return :play
     else
       return :lose
